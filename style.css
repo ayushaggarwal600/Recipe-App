@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* :root{
+    font-size: 62.5%;
+} */
+
+body{
+    background-color: #a28d48;
+    color: #fff;
+}
+
+header nav{
+    background-color: #212121;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /*error*/
+}
+
+header nav h1{
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header nav form{
+    display: flex;
+    justify-content: center;
+}
+
+header nav form input[type="text"]{
+    margin-right: 10px;
+    outline: none;
+}
+
+header nav form input[type="text"],button[type="submit"]{
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+form button[type="submit"]{
+    background-color: #0dc10de0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out ;
+}
+
+form button[type="submit"]:hover,.recipe button:hover, .recipe-close-btn:hover{
+    background-color: #ff5c5c;
+}
+
+/* main section */
+
+.recipe-container{
+    text-align: center;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); 
+    grid-gap: 40px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 90%;
+    margin: 10px auto;
+    /* padding: 20px; */
+}
+
+.recipe-container h2{
+    color: #1f1d1d;
+    font-weight: 800;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.recipe{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+
+    margin-right: 40px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe:hover{
+    transform: scale(1.02);
+}
+
+.recipe img{
+    height: 300px;
+}
+
+.recipe h3{
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+.recipe p{
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.recipe span{
+    font-weight: 600;
+}
+
+.recipe button{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: #0dc10de0;
+    color: #fff;
+    border: none;
+}
+
+/* Recipe Details */
+
+.recipe-details{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 12px;
+    background-color: #c7a537;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all 10s ease-in-out;
+    overflow-y: scroll;
+}
+
+.recipe-details-content{
+    padding: 30px;
+    color: #000;
+}
+
+.recipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.ingredientList li{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.recipeInstructions p{
+    line-height: 30px;
+    white-space: pre-line;
+}
+
+.recipeName, .ingredientList, .recipeInstructions{
+    margin-bottom: 20px;
+}
+
+.recipe-close-btn{
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #0dc10de0;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30pxpx;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* scrollbar */
+
+.recipe-details::-webkit-scrollbar{
+    width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb{
+    background-color: #b5b5ba;
+    border-radius: 16px;
+}
+
+body::-webkit-scrollbar{
+    width: 16px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #a1a1a1;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #ebebeb;
+}
+
+.youtube{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.youtube i{
+    font-size: 24px;
+    color: #f71900;
+}
+
+.youtube a{
+    margin: 10px;
+    font-size: 20px;
+    color: #ac4438;
+    text-decoration: none;
+} 
+
+.blur{
+    filter: blur(5px);
+}
+.customloader {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#242121);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation:s3 1s infinite linear;
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
+
+/* Responsive Code */
+@media screen and (max-width:600px){
+    header nav{
+        flex-direction: column;
+    }
+    header nav form{
+        width: 80%;
+        margin-top: 20px;
+    }
+}
